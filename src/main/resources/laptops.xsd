@@ -1,0 +1,71 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://pollub.pl/web-service"
+           targetNamespace="http://pollub.pl/web-service" elementFormDefault="qualified">
+
+    <xs:element name="getLaptopsByProducerRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="producer" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getLaptopsByProducerResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="numberOfLaptops" type="xs:integer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getLaptopsByScreenTypeRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="screenType" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getLaptopsByScreenTypeResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="laptop" type="tns:laptop" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getLaptopsByScreenResolutionRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="screenResolution" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getLaptopsByScreenResolutionResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="numberOfLaptops" type="xs:integer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="laptop">
+        <xs:sequence>
+            <xs:element name="producer" type="xs:string"/>
+            <xs:element name="screenSize" type="xs:int"/>
+            <xs:element name="screenResolution" type="xs:string"/>
+            <xs:element name="screenType" type="xs:string"/>
+            <xs:element name="screenTouch" type="xs:string"/>
+            <xs:element name="processor" type="xs:string"/>
+            <xs:element name="cpuCores" type="xs:integer"/>
+            <xs:element name="cpuSpeed" type="xs:integer"/>
+            <xs:element name="ram" type="xs:string"/>
+            <xs:element name="driveSize" type="xs:string"/>
+            <xs:element name="driveType" type="xs:string"/>
+            <xs:element name="graphicCard" type="xs:string"/>
+            <xs:element name="vRam" type="xs:string"/>
+            <xs:element name="system" type="xs:string"/>
+            <xs:element name="discDrive" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
